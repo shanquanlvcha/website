@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>qsfweb</module>
+    <module>qsfwebsite</module>
     <module>qsffront</module>
     <module>qsfbkmgr</module>
     <module>qsfbase</module>

@@ -86,4 +86,5 @@
         <property name="securityManager" ref="securityManager"/>
     </bean>
 
+	<mvc:default-servlet-handler/>
 </beans>

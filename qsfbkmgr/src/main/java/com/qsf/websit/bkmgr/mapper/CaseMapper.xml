@@ -61,20 +61,5 @@
         </trim>
     </insert>
    
-    <!-- 4 -->
-    <!-- 分页条件查询 -->
-    <select id="list" resultMap="BaseResultMap" parameterType="com.qsf.websit.bkmgr.entity.UserExample">
-        select
-        <if test="distinct">
-            distinct
-        </if>
-        <include refid="Base_Column_List" />
-        from user
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause" />
-        </if>
-        <if test="orderByClause != null">
-            order by ${orderByClause}
-        </if>
-    </select>
+   
 </mapper>

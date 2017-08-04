@@ -30,8 +30,8 @@ public class CaseController {
 		HashMap hashMap = new HashMap();
 		hashMap.put("a", a);
 		
-		List list = caseService.listCase(hashMap);
-		mv.addObject("list", list);
+		//List list = caseService.listCase(hashMap);
+		//mv.addObject("list", list);
 		return mv ;
 	}
 

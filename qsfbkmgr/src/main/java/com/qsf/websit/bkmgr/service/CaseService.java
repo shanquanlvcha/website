@@ -19,10 +19,6 @@ public interface CaseService  extends GenericService<User, Long> {
 	 
 	 Case findOneCase(HashMap<String,Object> hashMap);
 	 
-	 
-	 List listCase(HashMap<String,Object> hashMap);
-	 
-	 
 	
 	
 

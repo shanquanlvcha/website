@@ -68,11 +68,7 @@ public class CaseServiceImpl implements CaseService {
 		return null;
 	}
 
-	public List listCase(HashMap<String, Object> hashMap) {
-		
-		return caseMapper.list(hashMap);
-	}
-	
+
 	
 	/*public Case findOneCase(HashMap<String, Object> hashMap) {
 

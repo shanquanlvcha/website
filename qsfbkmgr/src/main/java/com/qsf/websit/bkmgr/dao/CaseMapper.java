@@ -18,7 +18,5 @@ public interface CaseMapper extends GenericDao<User, Long> {
     int update(HashMap<String,Object> hashMap);
     
     
-    List list(HashMap<String,Object> hashMap);
-    
 
 }

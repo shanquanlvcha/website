@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qsf.websit.bkmgr.dao.ContactMapper">
+	<!-- 结果集映射 -->
+     <resultMap id="BaseResultMap" type="com.qsf.websit.bkmgr.entity.Contact">
+      <id column="contactid" property="contactid" jdbcType="VARCHAR" />
+      <result column="rolename" property="rolename" jdbcType="VARCHAR" />
+      <result column="gender" property="gender" jdbcType="VARCHAR" />
+      <result column="address" property="address" jdbcType="VARCHAR" />
+      <result column="phonenum" property="phonenum" jdbcType="VARCHAR" />
+      <result column="qqnumber" property="qqnumber" jdbcType="VARCHAR" />
+   </resultMap>
+   
+	<select id="findAllContacts" resultMap="BaseResultMap">
+		select 
+			contactid ,
+			rolename,
+			gender,
+			address,
+			phonenum,	
+			qqnumber	
+		from
+			website_contact_test
+	</select>
+	
+      
+   
+   <!-- 根据主键查询联系人  -->
+   <select id = "findContactByContactid" resultMap="BaseResultMap" parameterType="java.lang.String">
+     select 
+	    a.contactid ,
+		a.rolename,
+		a.gender,
+		a.address,
+		a.phonenum,	
+		a.qqnumber	
+     from 
+     	website_contact_test a 
+     where 
+     	a.contactid= #{contactid}
+   </select>
+   
+   <!-- 新增联系人 -->
+   
+    <insert id="addContact" parameterType="com.qsf.websit.bkmgr.entity.Contact"> 
+		insert into website_contact_test
+			(contactid, rolename, gender, 
+			address, phonenum,qqnumber)
+		values
+			(#{contactid},#{rolename},#{gender},
+			#{address},#{phonenum},#{qqnumber})
+	</insert>
+   
+   <!-- 修改联系人 -->
+   <update id="updateContact" parameterType="com.qsf.websit.bkmgr.entity.Contact">
+		update 
+			website_contact_test
+		set
+			rolename=#{rolename},
+			gender=#{gender},
+			address=#{address},
+			phonenum=#{phonenum},
+			qqnumber=#{qqnumber}
+		where 
+			contactid=#{contactid}
+	</update>
+   
+   <!-- 删除联系人 -->
+   <delete id="deleteContact"  parameterType="com.qsf.websit.bkmgr.entity.Contact">
+		delete from website_contact_test
+		where contactid=#{contactid}
+	</delete>
+	<!-- 根据主键删除联系人 -->
+	<delete id="deleteContactByContactid" parameterType="String">
+		delete from website_contact_test
+		where contactid=#{contactid}
+	</delete>
+   
+</mapper>
